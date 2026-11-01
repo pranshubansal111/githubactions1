@@ -1,0 +1,21 @@
+name: test
+on: 
+  workflow_dispatch:
+jobs:
+  test_execution:
+    name: job creation for executing test cases
+    runs-on: ubuntu-latest
+    steps:
+      - name: getting code
+        uses: actions/checkout@v4
+
+      - name: installing dependencies
+        run: npm ci
+
+      - name: executing test cases
+        run: npm run test
+
+      - name: print success
+        run: echo "success"
+
+
