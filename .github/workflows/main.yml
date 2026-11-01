@@ -1,0 +1,10 @@
+name: tests
+on: workflow_dispatch
+jobs:
+  executing test cases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+      - name: executing test cases
+        run: npm run test
