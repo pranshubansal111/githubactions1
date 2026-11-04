@@ -14,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: getting-code
-      - uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
       - name: installing dependencies
-      - run: npm ci
+        run: npm ci
 
       - name: executing test cases
-      - run: npm run test
+        run: npm run test
 
       - name: creating release build
-      - run: npm run build
+        run: npm run build
 
-      - name: deplying code
-      - run: echo "deploying code successfully"
+      - name: deploying code
+        run: echo "deploying code successfully"
