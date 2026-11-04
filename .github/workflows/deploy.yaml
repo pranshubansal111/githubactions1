@@ -1,0 +1,29 @@
+name: deploying-code
+
+on: 
+  push: 
+    branches: 
+      - main
+  
+  workflow_dispatch:
+
+
+jobs:
+  deploying-code: 
+    name: job creation for deploying code
+    runs-on: ubuntu-latest
+    steps:
+      - name: getting-code
+      - uses: actions/checkout@v7
+
+      - name: installing dependencies
+      - run: npm ci
+
+      - name: executing test cases
+      - run: npm run test
+
+      - name: creating release build
+      - run: npm run build
+
+      - name: deplying code
+      - run: echo "deploying code successfully"
